@@ -1,6 +1,5 @@
 {% set name = "tf-keras" %}
 {% set version = "2.19.0" %}
-{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
