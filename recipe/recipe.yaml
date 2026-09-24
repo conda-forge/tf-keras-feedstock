@@ -1,16 +1,15 @@
 schema_version: 1
 
 context:
-  name: tf-keras
-  version: "2.19.0"
+  version: "2.21.0"
 
 package:
-  name: ${{ name|lower }}
+  name: tf-keras
   version: ${{ version }}
 
 source:
-  - url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/tf_keras-${{ version }}.tar.gz
-    sha256: b09a407d87a4571ce1e8ca985cfc68483e3d63b2518a5d79a97ad92cb64dbe9c
+  - url: https://pypi.org/packages/source/t/tf-keras/tf_keras-${{ version }}.tar.gz
+    sha256: f9af0f2546cd5532de0fae7a481f34a1ca2253737d4cd1000f6b713dc733f770
   - url: https://raw.githubusercontent.com/keras-team/tf-keras/master/LICENSE
     sha256: 58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd
     file_name: LICENSE
@@ -27,8 +26,7 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - numpy >=1.23
-    - tensorflow >=2.19,<2.20
+    - tensorflow <2.22,>=2.21
 
 tests:
   - python:
@@ -49,4 +47,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/keras
-
